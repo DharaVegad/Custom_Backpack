@@ -1,0 +1,134 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage_home.master.cs" Inherits="MasterPage_home" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link href ="StyleSheet_home.css" rel="stylesheet"/>
+    
+    <style type="text/css">
+        .auto-style1 {
+            font-weight: normal;
+        }
+
+        .bt-logout {
+            height:30px;
+            width:75px;
+            float:left;
+            margin:25px 0 0 225px;
+            border:none;
+            border-radius:5px 5px 5px 5px;
+            background-color:#f34141;
+            color:white;
+            cursor:pointer;
+        }
+            .bt-logout:hover {
+                background-color:#eb2222;
+                font-style:italic;
+            }
+    </style>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class ="container">
+
+            <div class ="content">
+
+                <div class ="header">
+                    
+                    <div style="width:100%; height:50%; margin-top:-35px;">
+                        <center><p style="font-size:35pt; font-weight:bold;">D-Vegad</p></center>
+                    </div>
+                    
+                    <div style="width:100%; height:50%;">
+                        
+                        <div style="height:100%; width:25%; float:left;">
+                            <asp:Label ID="lbl_user_name" runat="server" Text="Label" style="font-size:16pt; font-family:Calibri; font-weight:bold; float:left; margin:17px 0 0 90px;"></asp:Label>
+                        </div>
+
+                        <div style="height:100%; width:50%; float:left;">
+                            <label style="font-size:16pt; font-family:Calibri; font-weight:bold; float:left; margin:17px 0 0 245px;">CUSTOM BACKPACKS</label>
+                        </div>
+
+                        <div style="height:100%; width:25%; float:left;">
+                            <asp:Button ID="bt_logout" runat="server" Text="Log out" CssClass="bt-logout" OnClick="bt_logout_Click"/>
+                        </div>
+                    </div>
+                    
+                </div>
+                <br />
+                <div class="top1">
+
+                    <%--<asp:Menu ID="Menu3" runat="server" Orientation="Horizontal" CssClass="btn">
+                                            
+                        <Items>
+                   
+                            <asp:MenuItem Text="need some help?" NavigateUrl="~/" />
+                            <asp:MenuItem Text="Track Location" NavigateUrl="~/" />
+                       
+                        </Items>
+                    </asp:Menu>--%>
+
+                    <%--<a class="btn" href="project_reg.aspx">need some help<i class="fa fa-map-marker"></i></a>
+                    <a class="btn" href="project_log.aspx">track your location<i class="fa fa-map-marker"></i></a>--%>
+
+                    <asp:LinkButton ID="LinkButton1" CssClass="btn" runat="server" style="text-decoration:none;" PostBackUrl="~/project_reg.aspx">Need Some Help  <i class="fa fa-question-circle" ></i></asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton2" CssClass="btn" runat="server" style="text-decoration:none;" PostBackUrl="~/project_log.aspx">Track Location  <i class="fa fa-map-marker" ></i></asp:LinkButton>
+
+                </div>
+
+                <div class ="top">
+                    <%--<asp:LinkButton ID="LinkButton4" runat="server" CssClass="button button1" style="font-size:14px">MESSAGES  <i class="fa fa-comments"></i></asp:LinkButton>--%>
+                    <asp:LinkButton ID="LinkButton3" runat="server" CssClass="button button1" style="font-size:14px; text-decoration:none;" PostBackUrl="~/des_list.aspx">DESIGNERS</asp:LinkButton>
+                    <a href="message_user.aspx" class="button button1" style="font-size:14px">MESSAGES </a>
+                    <asp:LinkButton ID="LinkButton6" runat="server" CssClass="button button1" style="font-size:14px" PostBackUrl="~/requirement.aspx">REQUIREMENT  <i class="fa fa-pencil"></i></asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton5" runat="server" CssClass="button button1" style="float:right;font-size:14px">MY ACCOUNT  <i class="fa fa-user-circle"></i></asp:LinkButton>
+
+
+                    <%--<asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" CssClass="button button1" >
+                                            
+                        <Items>
+                   
+                            <asp:MenuItem Text="Designers" NavigateUrl="~/home.aspx" />
+                            <asp:MenuItem Text="Messages" NavigateUrl="~/" />
+                           
+                           
+                        </Items>
+                    </asp:Menu>
+
+                    <asp:Menu ID="Menu2" runat="server" Orientation="Horizontal" CssClass="btn2">
+                                            
+                        <Items>
+                   
+                            <asp:MenuItem Text="Requirement" NavigateUrl="~/" />
+                            
+                        </Items>
+                    </asp:Menu>--%>
+                    
+                </div>
+
+                <div>
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+                    </asp:ContentPlaceHolder>
+                </div>
+
+                <div class="middle"></div>
+
+                <div class ="fotter">
+
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>
